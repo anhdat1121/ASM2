@@ -1,0 +1,28 @@
+<a class="btn btn-info" href="/category/add">Add new category</a>
+<a class="btn btn-danger" href="/category/deleteall">Delete all</a>
+<br><br>
+<table class="table table-secondary">
+   <tr>
+      <th>Category name</th>
+      <th>Category material</th>
+      <th colspan="2">Menu</th>
+   </tr>
+   {{#each categories }}
+   <tr>
+      <td>
+         <a href="/category/detail/{{ _id }}">
+            {{ name }}
+         </a>
+      </td>
+      <td>{{ material }}</td>
+      <td>
+         <a class="btn btn-warning" href="/category/edit/{{ _id }}">Edit</a>
+      </td>
+      <td>
+         <a class="btn btn-danger" href="/category/delete/{{ _id }}"
+         onclick="return confirm('Are you sure to delete this category ?');"
+         >Delete</a>
+      </td>
+   </tr>
+   {{/each}}
+</table>
