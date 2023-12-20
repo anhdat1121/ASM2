@@ -1,8 +1,45 @@
-body {
+/* body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+} */
+.form-control {
+  display: block;
+  width: 80%;
+  /* padding: .375rem .75rem; */
+  font-size: 1rem;
+  line-height: 0;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s
 }
+/* body {
+  
+
+
+} */
+
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+.thumbnail{
+  width: 600 ;
+  height:750;
+}
+.searching {
+  width: 200px;
+  float: right;
+  margin-bottom: -6px;
+  margin-top: 5px;
+}
+.imghome{
+  width:100%;min-height:350px;max-height:600px;margin-bottom: 50px;
+}
+

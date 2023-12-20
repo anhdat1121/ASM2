@@ -1,0 +1,20 @@
+<a class="btn btn-info" href="/toy/add">Add new toy</a>
+<br><br>
+<table class="table table-bordered">
+   <tr>
+      <th>Toy name</th>
+      <th>Toy color</th>
+      <th>Toy category</th>
+      <th>Toy image</th>
+   </tr>
+   {{#each toys }}
+   <tr>
+      <td>{{ name }}</td>
+      <td>{{ color }}</td>
+      <td>{{ category.name }}</td>
+      <td>
+         <img src="{{ image }}" alt="" width="100" height="120">
+      </td>
+   </tr>
+   {{/each}}
+</table>

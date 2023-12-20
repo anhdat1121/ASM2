@@ -16,11 +16,12 @@ router.get('/add', (req, res) => {
     res.redirect('/brand');
  })
  router.get('/detail/:id', async (req, res) => {
-    var id = req.params.id;
-    //SQL: SELECT * FROM mobiles WHERE brand = "id"
-    var mobiles = await MobileModel.find({ brand : id }).populate('brand');
-    res.render('brand/detail', { mobiles })
- })
+   var id = req.params.id;
+   //SQL: SELECT * FROM toys WHERE brand = "id"
+   var toys = await ToyModel.find({ brand : id }).populate('brand');
+   res.render('brand/detail', { toys })
+})
+
  router.get('/delete/:id', async (req, res) => {
     var id = req.params.id;
     try {
