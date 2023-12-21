@@ -3,6 +3,7 @@ var router = express.Router();
 var CategoryModel = require('../models/CategoryModel');
 var ToyModel = require('../models/ToyModel');
 
+
 router.get('/', async (req, res) => {
    var categories = await CategoryModel.find({});
    res.render('category/index', { categories });

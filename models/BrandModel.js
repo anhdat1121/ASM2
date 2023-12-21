@@ -6,11 +6,11 @@ var BrandSchema = mongoose.Schema(
         minlength: [2, 'Please add more than 2 characters for brand names'],
         maxlength: 20}
       
-    ,
-    country: {
-        type: String,
-        required: true
-        }
+        ,
+        country: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'countries'  // 'categories': collection
+         }
     }
     
 )
