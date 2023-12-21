@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
  router.get('/customer', async (req, res) => {
    var toys = await ToyModel.find({}).populate('brand category');
    //Path: views/toy/index.hbs
-   res.render('toy/list', { toys });
+   res.render('toy/customer', { toys });
 })
 router.get('/delete/:id', async (req, res) => {
    await ToyModel.findByIdAndDelete(req.params.id);
