@@ -63,5 +63,10 @@ router.post('/edit/:id', async (req, res) => {
    }
    res.redirect('/category');
 })
-
+router.post('/search', async (req, res) => {
+   var keyword = req.body.keyword;
+   //SQL: SELECT * FROM toys WHERE name LIKE '%keyword%'
+   var categories = await CategoryModel.find({ name: new RegExp(keyword, "i") }).populate('');
+   res.render('category/index', { categories })
+})
 module.exports = router;

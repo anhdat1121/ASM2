@@ -56,4 +56,10 @@ router.get('/add', (req, res) => {
     }
     res.redirect('/brand');
  })
+ router.post('/search', async (req, res) => {
+   var keyword = req.body.keyword;
+   //SQL: SELECT * FROM toys WHERE name LIKE '%keyword%'
+   var brands = await BrandModel.find({ name: new RegExp(keyword, "i") }).populate('');
+   res.render('brand/index', { categories })
+ })
 module.exports = router;
