@@ -2,36 +2,22 @@ var express = require('express');
 var router = express.Router();
 var BrandModel = require('../models/BrandModel');
 var ToyModel = require('../models/ToyModel');
-var CountryModel = require('../models/CountryModel');
 
 router.get('/', async(req, res) =>{
-    var brands = await BrandModel.find({}).populate('country');
+    var brands = await BrandModel.find({});
   res.render('brand/index',{brands});
 });
-// router.get('/', async (req, res) => {
-//    var toys = await ToyModel.find({}).populate('brand category');
-//    //Path: views/toy/index.hbs
-//    res.render('toy/index', { toys });
-// })
+
 router.get('/add',async (req, res) => {
-   var countries = await CountryModel.find({});
-    res.render('brand/add',{countries});
+    res.render('brand/add');
  })
-//  router.get('/add', async (req, res) => {
-//    var brands = await BrandModel.find({});
-//    var categories = await CategoryModel.find({});
-//    res.render('toy/add', { brands, categories });
-// })
+
  router.post('/add', async (req, res) => {
     var brand = req.body;
     await BrandModel.create(brand);
     res.redirect('/brand');
  })
-//  router.post('/add', async (req, res) => {
-//    var toy = req.body;
-//    await ToyModel.create(toy);
-//    res.redirect('/toy');
-//  })
+
  router.get('/detail/:id', async (req, res) => {
    var id = req.params.id;
    //SQL: SELECT * FROM toys WHERE brand = "id"

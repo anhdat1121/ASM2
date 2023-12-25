@@ -1,6 +1,5 @@
 <div class="w3-right">
 <a class="btn btn-info" href="/brand/add">Add new brand</a>
-<a class="btn btn-info" href="/country/add">Add new country</a>
 <a class="btn btn-danger" href="/brand/deleteall">Delete all</a>
 </div>
 <form class="col-md-4" style="margin-top: 15px" action="/brand/search" method="post">
@@ -20,7 +19,7 @@
             {{ name }}
          </a>
       </td>
-      <td>{{ country.name }}</td>
+      <td>{{ country }}</td>
       <td>
          <a class="btn btn-warning" href="/brand/edit/{{ _id }}">Edit</a>
       </td>

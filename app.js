@@ -10,7 +10,6 @@ var usersRouter = require('./routes/users');
 var toyRouter = require('./routes/toy');
 var brandRouter = require('./routes/brand');
 var categoryRouter = require('./routes/category');
-var countryRouter = require('./routes/country');
 var app = express();
 
 var hbs = require('hbs');
@@ -41,7 +40,7 @@ app.use('/users', usersRouter);
 app.use('/toy', toyRouter);
 app.use('/brand', brandRouter);
 app.use('/category', categoryRouter);
-app.use('/country', countryRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

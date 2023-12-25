@@ -7,10 +7,10 @@ var BrandSchema = mongoose.Schema(
         maxlength: 20}
       
         ,
-        country: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'countries'  // 'categories': collection
-         }
+    country: {
+        type: String,
+        required: true
+        }
     }
     
 )
